@@ -1,0 +1,121 @@
+/**
+ * Global stylesheet that provides core styling for the entire application:
+ * - CSS reset and box-sizing normalization
+ * - Theme variables for consistent color scheme
+ * - Toast notification styling for user feedback
+ * - Page layout structure with fixed navbar
+ * - Container configuration for proper content positioning
+ * - Navbar styling with responsive behavior
+ * - Mobile responsiveness adjustments
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: #f1f1f1;
+  --main-color: #426553;
+}
+
+.toast-container {
+  position: fixed;
+  top: 80px;
+  z-index: 1009;
+  opacity: 100% !important;
+  transition: opacity 0.5s ease-in-out;
+  background-color: transparent !important;
+  padding: 0 15px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.toast {
+  background-color: #dc4227 !important;
+  border: none !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.toast.bg-success {
+  background-color: #10b981 !important;
+}
+
+.toast-body {
+  background-color: inherit !important;
+  color: white !important;
+  padding: 12px 15px !important;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--background-color);
+  min-width: 320px;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  margin-top: 56px;
+  width: 100%;
+  height: calc(100vh - 56px);
+  overflow-x: hidden;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#content-wrap {
+  position: relative;
+  min-height: calc(100vh - 56px);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--main-color);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1010;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.navbar-brand:hover {
+  color: #828282;
+}
+
+@media (max-width: 768px) {
+  #page-container {
+    overflow-x: hidden;
+  }
+
+  main {
+    margin: 0;
+  }
+}

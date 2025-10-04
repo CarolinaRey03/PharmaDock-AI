@@ -1,0 +1,241 @@
+/**
+ * This stylesheet provides styling for the molecular docking chat interface:
+ * - Fixed layout with split-screen design (visualization area and chat)
+ * - Responsive behavior for different screen sizes
+ * - Message styling for user and assistant messages
+ * - Input controls and button styling
+ * - Loading state and transitions
+ * - Markdown content formatting for rich responses
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#content-wrap {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#content-wrap .container-fluid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#content-wrap .row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+}
+
+#content-wrap .col-md-6:first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  bottom: 0;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content-wrap .col-md-6:last-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#container-01 {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1.5ms;
+}
+
+#container-01.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Keep the chat at the right side */
+#container-01+.col-md-6 {
+  width: 50%;
+  right: 0;
+  z-index: 10;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  color: white;
+  transition: opacity 0.5s ease;
+}
+
+.loading-content {
+  text-align: center;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+/* Chat box */
+.chat-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 70px;
+  background-color: #55ac7f;
+  overflow-y: auto;
+}
+
+/* Input group */
+.input-group {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: #315743;
+  padding: 10px;
+  z-index: 100;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for small windows */
+@media (max-width: 992px) {
+  #content-wrap .col-md-6:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    bottom: auto;
+  }
+
+  #content-wrap .col-md-6:last-child {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .chat-box {
+    bottom: 70px;
+  }
+
+  #container-01 {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+  }
+
+  #container-01+.col-md-6 {
+    height: 50%;
+    right: 0;
+    z-index: 10;
+  }
+
+}
+
+/* Styles for messages and content*/
+.btn {
+  background-color: #e4543c;
+  border-color: #e4543c;
+  height: 100%;
+}
+
+.btn:hover {
+  background-color: #dc4227;
+  border-color: #dc4227;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.form-control {
+  height: 100%;
+}
+
+#messages {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message-wrapper {
+  max-width: 80%;
+  margin-bottom: 15px;
+}
+
+.chat-message {
+  white-space: pre-wrap !important;
+  word-wrap: break-word;
+  line-height: 1.5;
+  padding: 10px 15px;
+  border-radius: 15px;
+}
+
+.user-message {
+  background-color: #315743 !important;
+  color: white !important;
+  font-size: small;
+}
+
+.markdown-content {
+  background-color: white !important;
+  color: #333 !important;
+  border-radius: 15px;
+  padding: 15px;
+  max-width: 80%;
+  word-wrap: break-word;
+  font-size: small;
+}
+
+.text-start.message-wrapper {
+  justify-content: flex-start;
+}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/registration/login.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="login-box">
+        <div class="login-header">
+            <h1>{% trans "Verify your account" %}</h1>
+            <p>{% trans "Enter the code that was sent to your email address" %}</p>
+        </div>
+        <form method="post" action="{% url 'otp_verification' %}">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <a href="{% url 'resend_otp' %}">{% trans "Resend code" %}</a>
+            <button class="btn btn-sm btn-primary float-end" type="submit">
+                {% trans "Verify account" %}
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

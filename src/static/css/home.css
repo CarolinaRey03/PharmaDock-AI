@@ -1,0 +1,122 @@
+/**
+ * This stylesheet provides styling for the application's landing page:
+ * - Terminal-like text editor with typing animation effect
+ * - 3D molecular visualization container with fade-in transition
+ * - Gradient background with scientific theme colors
+ * - Call-to-action button styling
+ * - Responsive layout for different screen sizes
+ * - Monospace font styling for code-like appearance
+ */
+
+body {
+  font-family: 'Consolas', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  background-color: #426553;
+  background: linear-gradient(40deg, #d0d5e5, #426553) fixed;
+}
+
+section {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 5%;
+  overflow: hidden;
+}
+
+/* Contenedor para terminal y visualizador */
+.main-elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 50vh;
+}
+
+/* Ajustar el tamaño del editor de texto */
+.text__editor {
+  background-color: black;
+  width: 45%;
+  max-width: 600px;
+  padding: 15px 15px 60px;
+  border-radius: 8px;
+  border-top: 20px solid white;
+  position: relative;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+
+.text__editor .text__body {
+  font-size: 24px;
+  color: white;
+}
+
+.typed-cursor {
+  color: white;
+}
+
+.mol-container {
+  width: 45%;
+  max-width: 400px;
+  height: 40vh;
+  max-height: 400px;
+  position: relative;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  margin-left: 20px;
+}
+
+.mol-container.visible {
+  opacity: 1;
+}
+
+.action-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn-primary {
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  background-color: #e4543c;
+  border-color: #e4543c;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #dc4227;
+  border-color: #dc4227;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+
+  section {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .text__editor,
+  .mol-container {
+    width: 100%;
+    max-width: none;
+    margin: 20px 0;
+  }
+
+  .text__editor {
+    order: 1;
+  }
+
+  .mol-container {
+    order: 2;
+  }
+}

@@ -1,0 +1,37 @@
+@startgantt initial_gantt_diagram
+
+Project starts 2025-02-20
+[In-1] starts 2025-02-15
+[In-2] starts 2025-03-02
+[In-3] starts 2025-03-05
+[In-4] starts 2025-03-15
+[In-5] starts 2025-03-31
+[In-6] starts 2025-04-07
+[In-7] starts 2025-04-16
+[In-8] starts 2025-04-19
+[In-9] starts 2025-04-26
+[In-10] starts 2025-05-04
+
+[In-1] ends 2025-03-01
+[In-2] ends 2025-03-04
+[In-3] ends 2025-03-14
+[In-4] ends 2025-03-30
+[In-5] ends 2025-04-06
+[In-6] ends 2025-04-15
+[In-7] ends 2025-04-18
+[In-8] ends 2025-04-25
+[In-9] ends 2025-05-03
+[In-10] ends 2025-05-11
+
+[In-1] is colored in LightBlue
+[In-2] is colored in LightBlue
+[In-3] is colored in LightBlue
+[In-4] is colored in LightBlue
+[In-5] is colored in LightBlue
+[In-6] is colored in LightBlue
+[In-7] is colored in LightBlue
+[In-8] is colored in LightBlue
+[In-9] is colored in LightBlue
+[In-10] is colored in LightBlue
+
+@endgantt

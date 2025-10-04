@@ -1,0 +1,12 @@
+@startuml State Diagram for the backend states
+
+[*] --> GeneDrugExtractionState : Empieza la interacción\ncon el chatbot
+GeneDrugExtractionState --> PDBExtractionState : Se obtiene el gen y el\nfármaco para\nhacer el docking\ny hay más de un PDB\npara el gen
+PDBExtractionState --> OptionsExtractionState : Se obtiene el PDB
+OptionsExtractionState --> DockingExecutionState: Se obtienen las\nopciones para hacer\nel docking
+DockingExecutionState --> GeneDrugExtractionState: Se realiza el docking\ny se prepara\npara realizar otro\nexpermiento
+
+GeneDrugExtractionState --> GeneDrugExtractionState : No se encuentra el gen\nni/o el fármaco\no el gen no tiene PDB
+GeneDrugExtractionState --> OptionsExtractionState : El gen solo tiene\nun PDB
+
+@enduml

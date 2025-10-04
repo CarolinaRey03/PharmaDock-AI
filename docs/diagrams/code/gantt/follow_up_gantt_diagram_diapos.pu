@@ -1,0 +1,38 @@
+@startgantt follow_up_gantt_diagram
+Project starts 2025-02-20
+
+[Esp. Requisitos] starts 2025-02-15
+[Obt. molec] starts 2025-03-02
+[Web chat] starts 2025-03-05
+[Flujo chat] starts 2025-03-18
+[Ejec. experimento] starts 2025-04-04
+[Obt. resultado] starts 2025-04-07
+[Pág. inicial] starts 2025-04-19
+[Login] starts 2025-04-24
+[Verificacion] starts 2025-05-01
+[Revision] starts 2025-05-10
+
+[Esp. Requisitos] ends 2025-03-01
+[Obt. molec] ends 2025-03-04
+[Web chat] ends 2025-03-17
+[Flujo chat] ends 2025-04-03
+[Ejec. experimento] ends 2025-04-06
+[Obt. resultado] ends 2025-04-18
+[Pág. inicial] ends 2025-04-23
+[Login] ends 2025-04-30
+[Verificacion] ends 2025-05-09
+[Revision] ends 2025-05-21
+
+[Esp. Requisitos] is colored in LightBlue
+[Obt. molec] is colored in LightBlue
+[Web chat] is colored in Red
+[Flujo chat] is colored in LightBlue
+[Ejec. experimento] is colored in Green
+[Obt. resultado] is colored in Red
+[Pág. inicial] is colored in LightBlue
+[Login] is colored in LightBlue
+[Verificacion] is colored in Red
+[Revision] is colored in Red
+
+
+@endgantt

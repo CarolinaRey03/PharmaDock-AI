@@ -1,0 +1,63 @@
+@startuml PharmaDock AI Backend Class Diagram
+
+abstract class State {
+
+}
+
+abstract class ExtractionState {
+
+}
+
+class GeneDrugExtraction {
+}
+
+class PDBExtractionState {
+
+}
+
+class OptionsExtractionState {
+
+}
+
+class DockingExecutionState {
+
+}
+
+class GetElementsThread {
+
+}
+
+class ChatbotThread {
+
+}
+
+abstract class SingletonMeta {
+
+}
+
+class ResourceManager {
+
+}
+
+' Docking classes
+class DockingService {
+}
+
+class DockingResult {
+}
+
+State <|-- ExtractionState
+ExtractionState <|-- GeneDrugExtraction
+ExtractionState <|-- PDBExtractionState
+ExtractionState <|-- OptionsExtractionState
+State <|-- DockingExecutionState
+
+ChatbotThread o-- State : contains
+DockingExecutionState --> DockingResult : creates
+DockingExecutionState --> DockingService : uses
+DockingExecutionState o-- ResourceManager : uses
+ExtractionState --> GetElementsThread : uses
+
+SingletonMeta <|-- ResourceManager : metaclass
+
+@enduml

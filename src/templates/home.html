@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}PharmaDock AI{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section>
+  <div class="main-elements">
+    <div class="text__editor">
+      <div class="text__body">
+        $&nbsp;<span id="typed"></span>
+      </div>
+    </div>
+    <div id="container-01" class="mol-container"></div>
+  </div>
+
+  <div class="action-button">
+    <a href="{% url 'chat' %}" class="btn btn-primary">{% trans 'Start docking' %}</a>
+  </div>
+</section>
+{% endblock %}
+
+{% block js %}
+<script>
+  const messages = {
+    welcome_message: "{{ _('Welcome to PharmaDock AI!') }}",
+    explanation_message: "{{ _('Here you can do the docking of your choice') }}",
+    example_message: "{{ _('For example: ') }}",
+    docking_message: "{{ _('Give me the docking between the drug Abemaciclib and the gene 2mm3') }}"
+  };
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="{% static 'js/molecule_styles.js' %}"></script>
+<script src="{% static 'js/home_viewer.js' %}"></script>
+{% endblock %}

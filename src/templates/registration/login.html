@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/registration/login.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+  <div class="login-box">
+    <div class="login-header">
+      <h1>{% trans "Log in to PharmaDock AI" %}</h1>
+      <p>{% trans "Enter your credentials to access your account" %}</p>
+    </div>
+
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <a href="{% url 'register' %}">{% trans "Sign up" %}</a>
+      <button class="btn btn-sm btn-primary float-end" type="submit">
+        {% trans "Login" %}
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

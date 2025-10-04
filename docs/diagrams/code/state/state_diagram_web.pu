@@ -1,0 +1,12 @@
+@startuml State Diagram for the web
+
+[*] --> Home : Entramos en la web
+Home --> Chat : Presionar "Empezar el docking"\nsolo si tenemos un inicio de\nsesión guardado
+Home --> Login : Presionar "Empezar el docking"
+Login --> Register : Registrarse
+Register --> Login : Iniciar sesión
+Register --> Verification
+Verification--> Chat
+Login --> Chat
+
+@enduml

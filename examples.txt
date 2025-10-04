@@ -1,0 +1,12 @@
+--- EJEMPLOS CON VARIOS PDBS ---
+
+Me gustaría hacer el docking entre el Abemaciclib y el gen ABL1
+
+--- EJEMPLO SIN PDBS ---
+
+Quiero realizar el docking entre el fármaco Abemaciclib y el gen ABAT
+
+--- EJEMPLOS CON EL FÁRMACO/GEN INCORRECTOS ---
+
+Quiero hacer el docking entre el Ibuprofeno y el gen A2M
+Realiza el docking entre el Alectinib y el gen 4H1

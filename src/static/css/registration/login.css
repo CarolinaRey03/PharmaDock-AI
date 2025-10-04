@@ -1,0 +1,165 @@
+/**
+ * This stylesheet provides styling for the authentication interface, including:
+ * - Login and registration forms
+ * - Custom theme colors using CSS variables
+ * - Form components (inputs, labels, buttons)
+ * - Notification messages (success/error)
+ */
+
+:root {
+  --primary-color: #e4543c;
+  --primary-hover: #dc4227;
+  --error-color: #ed1717;
+  --success-color: #10b981;
+  --text-color: #f1f1f1;
+  --light-text: #ffffff;
+  --bg-color: #d0d5e5;
+  --box-bg: #426553;
+  --border-color: #e5e7eb;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  width: auto;
+  max-width: 480px;
+  padding: 64px 20px;
+  margin: 0 auto;
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: static;
+}
+
+.login-box,
+.register-box {
+  background-color: var(--box-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 32px 32px 60px;
+  min-height: 350px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-box {
+  width: 450px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.login-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.login-header p {
+  margin-top: 8px;
+  color: var(--light-text);
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.form-actions {
+  margin-top: 24px;
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.messages {
+  margin-bottom: 16px;
+}
+
+.message {
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.message.error {
+  background-color: rgba(240, 21, 21, 0.1);
+  color: var(--error-color);
+}
+
+.message.success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success-color);
+}
+
+form a {
+  color: #100061;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+form a:hover {
+  color: #a29cc4;
+}
+
+.login-box .form-text,
+.register-box .form-text {
+  color: #aa9a9a !important;
+}

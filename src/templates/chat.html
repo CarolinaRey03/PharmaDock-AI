@@ -1,0 +1,67 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load i18n %}
+
+{% block title %}PharmaDock AI{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/chat.css' %}" />
+{% endblock %}
+
+{% block header %}
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <!-- Logo to the left -->
+    <a class="navbar-brand" href="{% url 'home' %}">PharmaDock AI</a>
+
+    <!-- Centred image -->
+    <div class="mx-auto d-flex justify-content-center">
+      <img src="{% static 'img/logos/interreg_sudoe-logo.png' %}" alt="Logo" style="height: 40px;">
+    </div>
+
+    <div class="ms-auto">
+      <a href="{% url 'logout' %}" class="btn btn-outline-light btn-sm">
+        <i class="fas fa-sign-out-alt"></i> {% trans 'Logout' %}
+      </a>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div id="container-01" class="mol-container">
+    </div>
+
+    <div class="col-md-6 d-flex flex-column">
+      <div class="chat-box flex-grow-1 p-3">
+        <div id="messages" class="d-flex flex-column gap-2"></div>
+      </div>
+
+      <div class="input-group p-3">
+        <input type="text" id="chatInput" class="form-control"
+          placeholder="{% trans 'Write here the docking to be performed...' %}" onkeypress="handleKeyPress(event)" />
+        <button class="btn btn-primary" onclick="sendMessage()">
+          {% trans 'Send' %}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block js%}
+<script>
+const loadingMessage = "{% trans 'Generating the response...' %}";
+const downloadMessage= "{% trans 'Download result file' %}";
+const serverErrorMessage="{% trans 'Error at the service: ' %}"
+const loadingErrorMessage="{% trans 'Error loading the file: ' %}"
+</script>
+<script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+<script type="text/javascript" src="{% url 'js-catalog' %}"></script>
+<script src="{% static 'js/molecule_styles.js' %}"></script>
+<script src="{% static 'js/chat_interaction.js' %}"></script>
+{% endblock %}
